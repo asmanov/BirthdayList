@@ -1,7 +1,9 @@
 ﻿using Dapper;
+using Dapper.Contrib.Extensions;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,7 +35,7 @@ namespace BirthdayList
                 for(int i = 0; i < 7; i++)
                 {
                     int k = 1;
-                    var dayofweek = result.Where(x => x.Date.Birthday == nearestMonday.AddDays(i));
+                    var dayofweek = result.Where(x => x.Date.Birthday.Day == (nearestMonday.AddDays(i)).Day && x.Date.Birthday.Month == (nearestMonday.AddDays(i)).Month);
                     foreach (var person in dayofweek)
                     {
                         FullNameUserControl fullNameUserControl = new FullNameUserControl(person.FirstName, person.LastName);
@@ -74,6 +76,8 @@ namespace BirthdayList
             int year = today.Year;
             int month = today.Month;
             int daysInMonth = DateTime.DaysInMonth(year, month);
+            var birthdays = GetPersonWithBirthday();
+
         }
 
         private void week_rd_CheckedChanged(object sender, EventArgs e)
@@ -109,5 +113,28 @@ namespace BirthdayList
                 return result;
             }
         }
-     }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            show_panel.Controls.Clear();
+            this.show_panel.Controls.Add(this.save_btn);
+            this.show_panel.Controls.Add(this.fname_label);
+            this.show_panel.Controls.Add(this.lname_label);
+            this.show_panel.Controls.Add(this.fname_TB);
+            this.show_panel.Controls.Add(this.lname_TB);
+            this.show_panel.Controls.Add(this.b_date);
+        }
+        private void Save_btn_Click(object sender, System.EventArgs e)
+        {
+            using (var connection = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=BirthdaysDB;Trusted_Connection=True;TrustServerCertificate=True;"))
+            {
+                connection.Open();
+
+                Person person = new Person() { FirstName = fname_TB.Text, LastName = lname_TB.Text, Date = new Date() { Birthday = b_date.Value } };
+                
+                connection.Insert(person.Date);
+                connection.Insert(person);
+            }
+        }
+    }
 }

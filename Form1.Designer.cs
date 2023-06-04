@@ -39,27 +39,33 @@
             this.week_rd = new System.Windows.Forms.RadioButton();
             this.show_panel = new System.Windows.Forms.Panel();
             this.sun_panel = new System.Windows.Forms.Panel();
+            this.sun_date_lb = new System.Windows.Forms.Label();
             this.Sun_lb = new System.Windows.Forms.Label();
             this.sat_panel = new System.Windows.Forms.Panel();
+            this.sat_date_lb = new System.Windows.Forms.Label();
             this.sat_lb = new System.Windows.Forms.Label();
             this.wed_panel = new System.Windows.Forms.Panel();
+            this.wed_date_lb = new System.Windows.Forms.Label();
             this.wed_lb = new System.Windows.Forms.Label();
             this.fri_panel = new System.Windows.Forms.Panel();
+            this.fri_date_lb = new System.Windows.Forms.Label();
             this.fri_lb = new System.Windows.Forms.Label();
             this.thu_panel = new System.Windows.Forms.Panel();
+            this.thur_date_lb = new System.Windows.Forms.Label();
             this.thu_lb = new System.Windows.Forms.Label();
             this.tue_panel = new System.Windows.Forms.Panel();
+            this.tu_date_lb = new System.Windows.Forms.Label();
             this.tue_lb = new System.Windows.Forms.Label();
             this.mon_panel = new System.Windows.Forms.Panel();
-            this.mon_lb = new System.Windows.Forms.Label();
             this.mon_date_lb = new System.Windows.Forms.Label();
-            this.tu_date_lb = new System.Windows.Forms.Label();
-            this.wed_date_lb = new System.Windows.Forms.Label();
-            this.thur_date_lb = new System.Windows.Forms.Label();
-            this.fri_date_lb = new System.Windows.Forms.Label();
-            this.sat_date_lb = new System.Windows.Forms.Label();
-            this.sun_date_lb = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.mon_lb = new System.Windows.Forms.Label();
+            this.save_btn = new System.Windows.Forms.Button();
+            this.fname_label = new System.Windows.Forms.Label();
+            this.lname_label = new System.Windows.Forms.Label();
+            this.fname_TB = new System.Windows.Forms.TextBox();
+            this.lname_TB = new System.Windows.Forms.TextBox();
+            this.b_date = new System.Windows.Forms.DateTimePicker();
+        ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel1.SuspendLayout();
             this.period_panel.SuspendLayout();
             this.show_panel.SuspendLayout();
@@ -127,6 +133,7 @@
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "ADD";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // period_panel
             // 
@@ -193,13 +200,6 @@
             this.show_panel.Name = "show_panel";
             this.show_panel.Size = new System.Drawing.Size(1440, 700);
             this.show_panel.TabIndex = 1;
-            //
-            // show_panel_month
-            //
-            //this.show_panel_month.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            //this.show_panel_month.Location = new System.Drawing.Point(1, 1);
-            //this.show_panel_month.Name = "show_panel_month";
-            //this.show_panel_month.Size = new System.Drawing.Size(1440, 700);
             // 
             // sun_panel
             // 
@@ -210,6 +210,15 @@
             this.sun_panel.Name = "sun_panel";
             this.sun_panel.Size = new System.Drawing.Size(200, 700);
             this.sun_panel.TabIndex = 6;
+            // 
+            // sun_date_lb
+            // 
+            this.sun_date_lb.AutoSize = true;
+            this.sun_date_lb.Location = new System.Drawing.Point(92, 5);
+            this.sun_date_lb.Name = "sun_date_lb";
+            this.sun_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.sun_date_lb.TabIndex = 1;
+            this.sun_date_lb.Text = "label1";
             // 
             // Sun_lb
             // 
@@ -231,6 +240,15 @@
             this.sat_panel.Size = new System.Drawing.Size(200, 700);
             this.sat_panel.TabIndex = 5;
             // 
+            // sat_date_lb
+            // 
+            this.sat_date_lb.AutoSize = true;
+            this.sat_date_lb.Location = new System.Drawing.Point(109, 2);
+            this.sat_date_lb.Name = "sat_date_lb";
+            this.sat_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.sat_date_lb.TabIndex = 1;
+            this.sat_date_lb.Text = "label1";
+            // 
             // sat_lb
             // 
             this.sat_lb.AutoSize = true;
@@ -250,6 +268,15 @@
             this.wed_panel.Name = "wed_panel";
             this.wed_panel.Size = new System.Drawing.Size(200, 700);
             this.wed_panel.TabIndex = 2;
+            // 
+            // wed_date_lb
+            // 
+            this.wed_date_lb.AutoSize = true;
+            this.wed_date_lb.Location = new System.Drawing.Point(113, 2);
+            this.wed_date_lb.Name = "wed_date_lb";
+            this.wed_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.wed_date_lb.TabIndex = 1;
+            this.wed_date_lb.Text = "label1";
             // 
             // wed_lb
             // 
@@ -271,6 +298,15 @@
             this.fri_panel.Size = new System.Drawing.Size(200, 700);
             this.fri_panel.TabIndex = 4;
             // 
+            // fri_date_lb
+            // 
+            this.fri_date_lb.AutoSize = true;
+            this.fri_date_lb.Location = new System.Drawing.Point(99, 2);
+            this.fri_date_lb.Name = "fri_date_lb";
+            this.fri_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.fri_date_lb.TabIndex = 1;
+            this.fri_date_lb.Text = "label1";
+            // 
             // fri_lb
             // 
             this.fri_lb.AutoSize = true;
@@ -291,6 +327,15 @@
             this.thu_panel.Size = new System.Drawing.Size(200, 700);
             this.thu_panel.TabIndex = 3;
             // 
+            // thur_date_lb
+            // 
+            this.thur_date_lb.AutoSize = true;
+            this.thur_date_lb.Location = new System.Drawing.Point(103, 2);
+            this.thur_date_lb.Name = "thur_date_lb";
+            this.thur_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.thur_date_lb.TabIndex = 1;
+            this.thur_date_lb.Text = "label1";
+            // 
             // thu_lb
             // 
             this.thu_lb.AutoSize = true;
@@ -310,6 +355,15 @@
             this.tue_panel.Name = "tue_panel";
             this.tue_panel.Size = new System.Drawing.Size(200, 700);
             this.tue_panel.TabIndex = 1;
+            // 
+            // tu_date_lb
+            // 
+            this.tu_date_lb.AutoSize = true;
+            this.tu_date_lb.Location = new System.Drawing.Point(105, 2);
+            this.tu_date_lb.Name = "tu_date_lb";
+            this.tu_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.tu_date_lb.TabIndex = 1;
+            this.tu_date_lb.Text = "label1";
             // 
             // tue_lb
             // 
@@ -332,6 +386,15 @@
             this.mon_panel.Size = new System.Drawing.Size(200, 700);
             this.mon_panel.TabIndex = 0;
             // 
+            // mon_date_lb
+            // 
+            this.mon_date_lb.AutoSize = true;
+            this.mon_date_lb.Location = new System.Drawing.Point(105, 5);
+            this.mon_date_lb.Name = "mon_date_lb";
+            this.mon_date_lb.Size = new System.Drawing.Size(44, 16);
+            this.mon_date_lb.TabIndex = 1;
+            this.mon_date_lb.Text = "label1";
+            // 
             // mon_lb
             // 
             this.mon_lb.AutoSize = true;
@@ -343,71 +406,23 @@
             this.mon_lb.TabIndex = 0;
             this.mon_lb.Text = "Monday";
             // 
-            // mon_date_lb
             // 
-            this.mon_date_lb.AutoSize = true;
-            this.mon_date_lb.Location = new System.Drawing.Point(105, 5);
-            this.mon_date_lb.Name = "mon_date_lb";
-            this.mon_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.mon_date_lb.TabIndex = 1;
-            this.mon_date_lb.Text = "label1";
-            // 
-            // tu_date_lb
-            // 
-            this.tu_date_lb.AutoSize = true;
-            this.tu_date_lb.Location = new System.Drawing.Point(105, 2);
-            this.tu_date_lb.Name = "tu_date_lb";
-            this.tu_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.tu_date_lb.TabIndex = 1;
-            this.tu_date_lb.Text = "label1";
-            // 
-            // wed_date_lb
-            // 
-            this.wed_date_lb.AutoSize = true;
-            this.wed_date_lb.Location = new System.Drawing.Point(113, 2);
-            this.wed_date_lb.Name = "wed_date_lb";
-            this.wed_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.wed_date_lb.TabIndex = 1;
-            this.wed_date_lb.Text = "label1";
-            // 
-            // thur_date_lb
-            // 
-            this.thur_date_lb.AutoSize = true;
-            this.thur_date_lb.Location = new System.Drawing.Point(103, 2);
-            this.thur_date_lb.Name = "thur_date_lb";
-            this.thur_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.thur_date_lb.TabIndex = 1;
-            this.thur_date_lb.Text = "label1";
-            // 
-            // fri_date_lb
-            // 
-            this.fri_date_lb.AutoSize = true;
-            this.fri_date_lb.Location = new System.Drawing.Point(99, 2);
-            this.fri_date_lb.Name = "fri_date_lb";
-            this.fri_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.fri_date_lb.TabIndex = 1;
-            this.fri_date_lb.Text = "label1";
-            // 
-            // sat_date_lb
-            // 
-            this.sat_date_lb.AutoSize = true;
-            this.sat_date_lb.Location = new System.Drawing.Point(109, 2);
-            this.sat_date_lb.Name = "sat_date_lb";
-            this.sat_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.sat_date_lb.TabIndex = 1;
-            this.sat_date_lb.Text = "label1";
-            // 
-            // sun_date_lb
-            // 
-            this.sun_date_lb.AutoSize = true;
-            this.sun_date_lb.Location = new System.Drawing.Point(92, 5);
-            this.sun_date_lb.Name = "sun_date_lb";
-            this.sun_date_lb.Size = new System.Drawing.Size(44, 16);
-            this.sun_date_lb.TabIndex = 1;
-            this.sun_date_lb.Text = "label1";
-            // 
+            //
+            this.save_btn.Location = new System.Drawing.Point(400, 400);
+            this.save_btn.Text = "SAVE";
+            this.save_btn.UseVisualStyleBackColor = true;
+            this.save_btn.Click += Save_btn_Click;
+            this.fname_label.Location = new System.Drawing.Point(200, 100);
+            this.fname_label.Text = "First Name";
+            this.lname_label.Location = new System.Drawing.Point(400, 100);
+            this.lname_label.Text = "Last Name";
+            this.fname_TB.Location = new System.Drawing.Point(200, 200);
+            this.lname_TB.Location = new System.Drawing.Point(400, 200);
+            this.b_date.Location = new System.Drawing.Point(600, 200);
+            //this.b_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            //
             // Form1
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1740, 700);
@@ -437,6 +452,8 @@
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 
@@ -472,6 +489,12 @@
         private System.Windows.Forms.Label fri_date_lb;
         private System.Windows.Forms.Label sat_date_lb;
         private System.Windows.Forms.Label sun_date_lb;
+        private System.Windows.Forms.Button save_btn;
+        private System.Windows.Forms.Label fname_label;
+        private System.Windows.Forms.Label lname_label;
+        private System.Windows.Forms.TextBox fname_TB;
+        private System.Windows.Forms.TextBox lname_TB;
+        private System.Windows.Forms.DateTimePicker b_date;
     }
 }
 
